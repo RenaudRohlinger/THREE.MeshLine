@@ -1,6 +1,6 @@
 {
   "name": "meshline",
-  "version": "3.1.6",
+  "version": "3.1.7",
   "author": "Jaume Sanchez <the.spite@gmail.com> (https://www.clicktorelease.com)",
   "license": "MIT",
   "bugs": {
@@ -29,7 +29,7 @@
     "vite": "^3.2.5"
   },
   "peerDependencies": {
-    "three": ">=0.137"
+    "three": ">=0.154"
   },
   "scripts": {
     "dev": "vite demo",
