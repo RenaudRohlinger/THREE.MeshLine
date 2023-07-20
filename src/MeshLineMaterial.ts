@@ -108,7 +108,7 @@ const fragmentShader = /* glsl */ `
     gl_FragColor.a *= step(vCounters, visibility);
     #include <fog_fragment>
     #include <tonemapping_fragment>
-    #include <encodings_fragment>
+    #include <colorspace_fragment>
   }
 `
 
