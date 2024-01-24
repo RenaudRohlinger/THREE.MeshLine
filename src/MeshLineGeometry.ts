@@ -224,11 +224,20 @@ export class MeshLineGeometry extends THREE.BufferGeometry {
     if (this.compareV3(l - 1, 0)) {
       v = this.copyV3(1)
     } else {
+      // Below code will result in NaNs if the value of 'l' is less than 9 (rightmost last this.positions read 9-3-6 = 0 most restrictive)
+      // Not sure how this should be fixed but some kind of check and handling needs to be done
       v = [
         this.positions[l - 1] + (this.positions[l - 1] - this.positions[l - 1 - 6]),
         this.positions[l - 2] + (this.positions[l - 2] - this.positions[l - 2 - 6]),
         this.positions[l - 3] + (this.positions[l - 3] - this.positions[l - 3 - 6])
       ]
+
+      //Furthermore can be simplified to (+ error handling needed) -->
+      // v = [
+      //   2 * this.positions[l - 1] - this.positions[l - 1 - 6],
+      //   2 * this.positions[l - 2] - this.positions[l - 2 - 6],
+      //   2 * this.positions[l - 3] - this.positions[l - 3 - 6]
+      // ]
     }
     this.next.push(v[0], v[1], v[2])
     this.next.push(v[0], v[1], v[2])
