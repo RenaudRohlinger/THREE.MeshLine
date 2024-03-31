@@ -144,7 +144,6 @@ export class MeshLineMaterial extends THREE.ShaderMaterial implements MeshLineMa
   useAlphaMap!: number
   color!: THREE.Color
   gradient!: THREE.Color[]
-  opacity: number = 1
   resolution!: THREE.Vector2
   sizeAttenuation!: number
   dashArray!: number
@@ -153,7 +152,6 @@ export class MeshLineMaterial extends THREE.ShaderMaterial implements MeshLineMa
   useDash!: number
   useGradient!: number
   visibility!: number
-  alphaTest: number = 0
   repeat!: THREE.Vector2
 
   constructor(parameters: MeshLineMaterialParameters) {
